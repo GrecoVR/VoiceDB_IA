@@ -6,18 +6,15 @@ def eliminar_datos(id_auto):
     conexion = conectar_db()
     cursor = conexion.cursor()
 
-    query = """
-        DELETE FROM auto
-        WHERE id = %s
-    """
+    query_eliminar = "DELETE FROM auto WHERE id = %s"
 
-    cursor.execute(query, (id_auto,))
+    cursor.execute(query_eliminar, (id_auto,))
 
     conexion.commit()
 
-    filas_eliminadas = cursor.rowcount
+    fila_eliminada = cursor.rowcount
 
     cursor.close()
     conexion.close()
 
-    return filas_eliminadas
+    return fila_eliminada

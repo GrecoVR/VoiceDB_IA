@@ -3,51 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gestión de Vehículos</title>
+  <title>Gestión de Autos</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <div class="ambient ambient-1"></div>
-  <div class="ambient ambient-2"></div>
-  <div class="ambient ambient-3"></div>
-  <div class="particles" id="particles"></div>
-
-  <div class="app-shell">
-    <header class="topbar">
+  <div id="alerta" class="alerta">
+    <span id="mensajeAlerta"></span>
+  </div>
+  <div class="contenedor-principal">
+    <header class="barra-superior">
       <div>
         <h1>Tabla de Autos</h1>
       </div>
-
     </header>
-
-    <main class="dashboard">
-      <section class="voice-card glass">
-        <div class="voice-heading">
+    <main class="panel-principal">
+      <section class="tarjeta-voz efecto-vidrio">
+        <div class="encabezado-voz">
           <h2>Inserta un nuevo auto</h2>
         </div>
-
-        <button class="mic-button" id="micButton" type="button" aria-label="Activar micrófono">
-          <span class="mic-rings"></span>
-          <span class="mic-glow"></span>
-          <svg class="mic-icon" viewBox="0 0 24 24" aria-hidden="true">
+        <button class="boton-microfono" id="botonMicrofono" type="button" aria-label="Activar micrófono">
+          <span class="brillo-microfono"></span>
+          <svg class="icono-microfono" viewBox="0 0 24 24" aria-hidden="true">
             <path d="M12 14.5a3.5 3.5 0 0 0 3.5-3.5V6a3.5 3.5 0 0 0-7 0v5a3.5 3.5 0 0 0 3.5 3.5Z"/>
             <path d="M18.5 11a6.5 6.5 0 0 1-13 0M12 17.5V21M8.5 21h7"/>
           </svg>
-          <span class="timer" id="voiceTimer">10</span>
+          <span class="temporizador" id="temporizadorVoz"></span>
         </button>
-
-        <div class="voice-state" id="voiceState">Hablar</div>
-
+        <div class="estado-voz" id="estadoVoz">Hablar</div>
       </section>
-
-      <section class="vehicles-card glass">
-        <div class="table-toolbar">
+      <section class="tarjeta-autos efecto-vidrio">
+        <div class="barra-tabla">
           <div>
-            <h2>Autos registrados <span id="contador_autos">0</span></h2>
+            <h2>Autos registrados <span id="contadorAutos">0</span></h2>
           </div>
-
-          <div class="table-actions">
-            <button class="toolbar-button" id="refreshButton" type="button" title="Actualizar lista">
+          <div class="acciones-tabla">
+            <button class="boton-herramienta" id="botonActualizar" type="button" title="Actualizar lista">
               <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M20 11a8.1 8.1 0 0 0-14.9-4L3 10"/>
                 <path d="M3 5v5h5M4 13a8.1 8.1 0 0 0 14.9 4L21 14"/>
@@ -56,34 +46,30 @@
             </button>
           </div>
         </div>
-
-        <div class="table-scroll">
+        <div class="desplazamiento-tabla">
           <table>
             <thead>
               <tr>
                 <th>Marca</th>
                 <th>Modelo</th>
                 <th>
-                  <button class="price-toggle" id="priceToggle" type="button">
-                    <span id="priceHeader">Precio</span>
-                    <span class="toggle-icon">⇄</span>
+                  <button class="boton-precio" id="botonPrecio" type="button">
+                    <span id="Precio">Precio</span>
+                    <span class="icono-cambio">⇄</span>
                   </button>
                 </th>
-                <th class="action-column">Acción</th>
+                <th class="columna-accion">Acción</th>
               </tr>
             </thead>
-            <tbody id="vehicleTableBody"></tbody>
+            <tbody id="TablaAutos"></tbody>
           </table>
-
-          <div class="empty-state" id="emptyState">
+          <div class="estado-vacio" id="estadoVacio">
             <strong>No hay vehículos registrados</strong>
           </div>
         </div>
       </section>
     </main>
   </div>
-
-  <div class="toast-container" id="toastContainer"></div>
-  <script src="js/app.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>

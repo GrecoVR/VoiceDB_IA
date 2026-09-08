@@ -21,13 +21,8 @@ def grabar_audio():
 
     sd.wait()
 
-    # Aumentar ganancia
     audio = audio.astype(np.float32) * ganancia
-
-    # Evitar que el audio se salga del rango de int16
     audio = np.clip(audio, -32768, 32767)
-
-    # Volver a int16
     audio = audio.astype(np.int16)
 
     wav.write("audio.wav", frecuencia, audio)
