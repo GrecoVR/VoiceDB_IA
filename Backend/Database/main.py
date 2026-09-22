@@ -31,3 +31,4 @@ def ejecutar_sql(datos):
 
 def consultar_listado_autos():
     return obtener_autos()
+

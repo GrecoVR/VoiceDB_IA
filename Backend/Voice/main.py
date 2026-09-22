@@ -13,3 +13,4 @@ def procesar_audio():
             resultado_sql = ejecutar_sql(resultado)
             return resultado_sql
     return None
+

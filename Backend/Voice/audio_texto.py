@@ -52,3 +52,5 @@ def convertir_a_texto():
     except sr.RequestError as error:
         print("Error de reconocimiento:", error)
         return None
+
+    

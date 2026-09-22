@@ -18,3 +18,4 @@ def eliminar_datos(id_auto):
     conexion.close()
 
     return fila_eliminada
+

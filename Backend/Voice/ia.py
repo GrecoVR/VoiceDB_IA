@@ -117,3 +117,5 @@ def interpretar(texto):
     print("RESPUESTA DE OLLAMA:")
     print(resultado)
     return json.loads(resultado)
+
+
